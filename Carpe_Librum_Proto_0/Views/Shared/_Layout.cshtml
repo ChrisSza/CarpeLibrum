@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Carpe Librum</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <header style="background-color:#e24d37; padding:5px">
+        <img src="~/Images/Carpe_Librum_logos/carpelibrum-logos.jpeg" width="200" height="200" />
+
+    </header>
+
+    <section style="background-color:#e6dfdf; padding:5px">
+        <nav style="text-align: center; font-size: 24px">
+            @Html.ActionLink("Home", "Index", "Home") |
+            @Html.ActionLink("Suggest A Book", "SuggestABook", "SuggestBook")|
+            @Html.ActionLink("List of Books", "Index", "SuggestBook")|
+            @Html.ActionLink("Book of the Month", "BookofTheMonth", "SuggestBook")
+        </nav>
+
+
+    </section>
+    <hr />
+    <section style="position: relative; width: 50%; margin: 0 auto; ">
+
+        <div>@RenderBody()</div>
+
+    </section>
+
+    <hr />
+    <footer style="background-color:#e6dfdf; padding:5px; text-align:center"><p>&copy; @DateTime.Now.Year - Carpe Librum</p></footer>
+
+
+
+</body>
+</html>

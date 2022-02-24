@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Carpe_Librum_Proto_0.Models.SuggestBook>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center">List of Suggested Books</h2>
+<br\ >
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookAuthor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </th>
+        <th></th>
+    </tr>
+
+    <!--Loops through each of books and displays them in order from most-->
+@foreach (var item in Model.OrderBy(item=> item.DateAdded)) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookAuthor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateAdded)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.BookId }) 
+        </td>
+    </tr>
+}
+
+</table>
